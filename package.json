@@ -1,0 +1,16 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "Backend problem solution for Youth India.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Prince Saini",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "googleapis": "^110.0.0",
+    "node-static": "^0.7.11"
+  }
+}

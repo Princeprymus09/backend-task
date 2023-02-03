@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youth India</title>
+  </head>
+  <body>
+    <script>
+      let parent;
+      function startOauth() {
+        parent = window.open(
+          "http://localhost:3000/rest/v1/calendar/init",
+          undefined,
+          `width=${500},height=${600},left=${100},top=${150}`
+        );
+      }
+
+      async function getEvents() {
+        document.getElementById("response-board").innerHTML = "";
+        const response = await fetch(
+          "http://localhost:3000/rest/v1/calendar/events"
+        );
+        document.getElementById("response-board").innerHTML =
+          await response.text();
+      }
+    </script>
+    <h2>Hey there</h2>
+    <button onclick="startOauth()">Start Oauth</button>
+    <button onclick="getEvents()">Get Events</button>
+    <br />
+
+    <div id="response-board"></div>
+  </body>
+</html>
